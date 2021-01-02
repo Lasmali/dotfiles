@@ -1,5 +1,4 @@
 
-
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/coc.vim
 
@@ -12,6 +11,14 @@ endfor
 "set background=light
 
 language en_US
+
+vnoremap , <Nop>
+let mapleader = ","
+
+" edit init.vim
+let nvim_init = $XDG_CONFIG_HOME . "/nvim/init.vim"
+nnoremap <leader>ev :exe ':vsplit' nvim_init<cr>
+nnoremap <leader>sv :exe ':source' nvim_init<cr>
 
 
 " To map <Esc> to exit terminal-mode:
@@ -34,3 +41,9 @@ language en_US
 :nnoremap <C-j> <C-w>j
 :nnoremap <C-k> <C-w>k
 :nnoremap <C-l> <C-w>l
+
+" goto start and end of line
+nnoremap H 0
+nnoremap L $
+vnoremap H 0
+vnoremap L $
